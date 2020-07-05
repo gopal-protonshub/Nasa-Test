@@ -10,7 +10,11 @@ const ButtonComponent = props => {
         marginLeft: 'auto',
         margin: 5,
       }}>
-      <Button title={props.title} onPress={props.onPress} />
+      <Button
+        disabled={props.disabled}
+        title={props.title}
+        onPress={props.onPress}
+      />
     </View>
   );
 };

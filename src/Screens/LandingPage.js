@@ -70,7 +70,8 @@ const LandingPage = props => {
         <ImageComponent />
         <InputComponent
           value={asteroidID}
-          onTextChange={ev => {
+          onChangeText={ev => {
+            console.log(ev);
             setAsteroidID(ev);
           }}
           placeholder={'Enter Asteriod Id'}
@@ -84,6 +85,7 @@ const LandingPage = props => {
           </Text>
         ) : null}
         <ButtonComponent
+          disabled={!asteroidID.length}
           title={'Submit'}
           onPress={() => {
             getNasa(asteroidID);

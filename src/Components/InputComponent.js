@@ -14,7 +14,7 @@ const InputComponent = props => {
         paddingRight: 20,
       }}
       placeholder={props.placeholder}
-      onTextChange={props.onTextChange}
+      onChangeText={props.onChangeText}
       value={props.value}
     />
   );
