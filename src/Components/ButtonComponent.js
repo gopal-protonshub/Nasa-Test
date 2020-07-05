@@ -11,6 +11,7 @@ const ButtonComponent = props => {
         margin: 5,
       }}>
       <Button
+        color={'#000'}
         disabled={props.disabled}
         title={props.title}
         onPress={props.onPress}

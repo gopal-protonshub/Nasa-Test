@@ -11,18 +11,18 @@ const AsteroidData = props => {
       <ImageComponent />
       <TextComponet
         align={'left'}
-        text={'name => ' + props.route.params.data.name}
+        text={'name: ' + props.route.params.data.name}
       />
       <TextComponet
         align={'left'}
-        text={'nasa_jpl_url => ' + props.route.params.data.nasa_jpl_url}
+        text={'nasa_jpl_url: ' + props.route.params.data.nasa_jpl_url}
       />
       <TextComponet
         align={'left'}
         text={
           props.route.params.data.is_potentially_hazardous_asteroid
-            ? ' is_potentially_hazardous_asteroid => True'
-            : ' is_potentially_hazardous_asteroid => False'
+            ? ' is_potentially_hazardous_asteroid: True'
+            : ' is_potentially_hazardous_asteroid: False'
         }
       />
     </View>

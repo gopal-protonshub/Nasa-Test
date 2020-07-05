@@ -6,7 +6,7 @@ import ButtonComponent from '../Components/ButtonComponent';
 import InputComponent from '../Components/InputComponent';
 import ImageComponent from '../Components/ImageComponent';
 const api = new Api();
-const LandingPage = props => {
+const HomePage = props => {
   const [asteroidID, setAsteroidID] = React.useState('');
   const [loader, setLoader] = React.useState(false);
   const getNasa = id => {
@@ -59,42 +59,33 @@ const LandingPage = props => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <View
-        style={{
-          width: '90%',
-          height: 500,
-          borderRadius: 10,
-          backgroundColor: '#fff',
-          elevation: 7,
-        }}>
-        <ImageComponent />
-        <InputComponent
-          value={asteroidID}
-          onChangeText={ev => {
-            console.log(ev);
-            setAsteroidID(ev);
-          }}
-          placeholder={'Enter Asteriod Id'}
-        />
-        {loader ? (
-          <Text
-            style={{
-              textAlign: 'center',
-            }}>
-            Please Wait ...
-          </Text>
-        ) : null}
-        <ButtonComponent
-          disabled={!asteroidID.length}
-          title={'Submit'}
-          onPress={() => {
-            getNasa(asteroidID);
-          }}
-        />
-        <ButtonComponent title={'Random Id'} onPress={randomAsteroid} />
-      </View>
+      <ImageComponent />
+      <InputComponent
+        value={asteroidID}
+        onChangeText={ev => {
+          console.log(ev);
+          setAsteroidID(ev);
+        }}
+        placeholder={'Enter Asteriod Id'}
+      />
+      {loader ? (
+        <Text
+          style={{
+            textAlign: 'center',
+          }}>
+          Loading! Please Wait ...
+        </Text>
+      ) : null}
+      <ButtonComponent
+        disabled={!asteroidID.length}
+        title={'Submit'}
+        onPress={() => {
+          getNasa(asteroidID);
+        }}
+      />
+      <ButtonComponent title={'Random Id'} onPress={randomAsteroid} />
     </SafeAreaView>
   );
 };
 
-export default LandingPage;
+export default HomePage;

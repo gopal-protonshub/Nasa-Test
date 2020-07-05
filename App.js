@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import LandingPage from './src/Screens/LandingPage';
+import HomePage from './src/Screens/HomePage';
 import AsteroidData from './src/Screens/AsteroidData';
 const Stack = createStackNavigator();
 const App = () => {
@@ -13,9 +13,15 @@ const App = () => {
           options={{
             headerShown: false,
           }}
-          component={LandingPage}
+          component={HomePage}
         />
-        <Stack.Screen name="AsteroidData" component={AsteroidData} />
+        <Stack.Screen
+          name="AsteroidData"
+          options={{
+            headerTitle: 'Asteroid Data',
+          }}
+          component={AsteroidData}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

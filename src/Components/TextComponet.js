@@ -5,10 +5,12 @@ const TextComponet = props => {
     <Text
       style={{
         textAlign: props.align,
-        backgroundColor: '#fff',
+        backgroundColor: '#000',
         elevation: 7,
         padding: 10,
-        margin: 10
+        margin: 10,
+        color: '#fff',
+        borderRadius: 10,
       }}>
       {props.text}
     </Text>
