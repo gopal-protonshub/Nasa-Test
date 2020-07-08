@@ -17,7 +17,7 @@ const LandingPage = props => {
       .getApi(url)
       .then(response => {
         setLoader(false);
-        console.log(response);
+        // console.log(response);
         if (response === false) {
           return;
         }
@@ -39,12 +39,12 @@ const LandingPage = props => {
      * getting a random number b/w 0 to 20
      */
     const randomNo = Math.floor(Math.random() * (19 + 1));
-    console.log(randomNo);
+    // console.log(randomNo);
     await api
       .getApi(url)
       .then(response => {
         setLoader(false);
-        console.log(response.near_earth_objects[randomNo].id);
+        // console.log(response.near_earth_objects[randomNo].id);
         getNasa(response.near_earth_objects[randomNo].id);
       })
       .catch(error => {
@@ -71,7 +71,7 @@ const LandingPage = props => {
         <InputComponent
           value={asteroidID}
           onChangeText={ev => {
-            console.log(ev);
+            // console.log(ev);
             setAsteroidID(ev);
           }}
           placeholder={'Enter Asteriod Id'}

@@ -4,7 +4,7 @@ import ImageComponent from '../Components/ImageComponent';
 import TextComponet from '../Components/TextComponet';
 const AsteroidData = props => {
   React.useEffect(() => {
-    console.log(props.route.params.data);
+    // console.log(props.route.params.data);
   }, [props.route.params.data]);
   return (
     <View>
